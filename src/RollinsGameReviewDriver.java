@@ -13,6 +13,12 @@ public class RollinsGameReviewDriver {
 
         System.out.print("Enter your student ID: ");
         String id = scanner.nextLine();
+        
+        System.out.print("Enter the name of the Game you are reviewing: ");
+        String gameName = scanner.nextLine();
+        
+        System.out.print("Enter the genre of the Game you are reviewing: ");
+        String gameGenre = scanner.nextLine();
 
         System.out.print("Enter your review score (0-100): ");
         int score = scanner.nextInt();
