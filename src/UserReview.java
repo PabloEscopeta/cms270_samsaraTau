@@ -1,48 +1,36 @@
 import java.util.Scanner;
 
-public class UserReview extends ReviewAbstract{
+public class UserReview extends ReviewAbstract {
 	
-	private AudienceReview review;
+	    private String reviewerName;
+	    private String reviewerID;
+	    private int score;
+	    private String comment;
+	    private String reviewDate;
 	
-	public void submitReview(
-		// Collect score, comment, and date, and create an AudienceReview object
-		// Update numberOfReviews 
-		String gameName,
-		String gameGenre,
-		String reviewerName,
-		String reviewerID,
-		int score,
-		String comment,
-		String date
-		) { 
-		review = new AudienceReview(
-				gameName,
-				gameGenre,
-				reviewerName,
-				reviewerID,
-				score,
-				comment,
-				date
-				);
-		numberOfReviews++;
-		
-	}
+	    // Constructor
+	    public UserReview(String reviewerName, String reviewerID, int score, 
+	                      String comment, String reviewDate) {
+	    	
+	    	
+	        this.reviewerName = reviewerName;
+	        this.reviewerID = reviewerID;
+	        this.score = score;
+	        this.comment = comment;
+	        this.reviewDate = reviewDate;
+	    }
 	
-	@Override
-	public void displayReview() {
-		// Display review details (toString() for console/debugg?)
-		if (review == null) {
-			System.out.println("No review available.");
-		} else {
-			System.out.println(review.toString());
-		}
-	}
-	
-	public String getReviewText() {
-		return (review == null)
-				? "No review available."
-						: review.toString();
-	}
+	    
+	    
+	   // Will return the information the User will input themselves
+	    public String toString() {
+	        return "Reviewer: " + reviewerName + " (ID: " + reviewerID + ")\n" +
+	               "Score: " + score + "/100\n" +
+	               "Comment: " + comment + "\n" +
+	               "Date made: " + reviewDate;
+	    }
+
+
 
 	@Override
 	public void submitReview() {
@@ -50,4 +38,11 @@ public class UserReview extends ReviewAbstract{
 		
 	}
 
+
+
+	@Override
+	public void displayReview() {
+		// TODO Auto-generated method stub
+		
+	}
 }
