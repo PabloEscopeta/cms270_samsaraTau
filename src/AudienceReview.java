@@ -57,5 +57,16 @@ public class AudienceReview {
 		return userReviewDate;
 	}
 	
+	@Override
+	public String toString() {
+		return "Game: " + gameName + "\n" +
+				"Genre: " + gameGenre + "\n" + 
+				"Reviewer: " + gameReviewer + "\n" +
+				"ID: " + reviewerID + "\n" +
+				"Review Score: " + userGameReviewScore + " /10" + "\n" +
+				"Review: " + userReviewComment + "\n" +
+				"Posted on: " + userReviewDate; 
+	}
+	
 
 }
