@@ -1,18 +1,11 @@
 
-public class AudienceReview {
-	
-	private String gameName;
-	private String gameGenre;
-	private String gameReviewer;
-	private String reviewerID; 
-	private int userGameReviewScore;
-	private String userReviewComment;
-	private String userReviewDate; 
+public class AudienceReview extends ReviewAbstract {
 	
 	// constructor
 	public AudienceReview(String newGameName, String newGameGenre, String newGameReviewer, 
 			String newReviewerID, int newUserGameReviewScore, String newUserReviewComment,
 			String newUserReviewDate) {
+		// these fields are all inherited from ReviewAbstract
 		this.gameName = newGameName;
 		this.gameGenre = newGameGenre;
 		this.gameReviewer = newGameReviewer;
