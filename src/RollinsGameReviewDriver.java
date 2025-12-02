@@ -28,7 +28,7 @@ public class RollinsGameReviewDriver {
         
         allReviews.add(new UserReview("OhNoItsEustace", "R00045516", 80,
             "Game is good, but these publishers need to stop making everything cross-platform", "2025-12-01",
-            "Tommy The Tar 2", "Adventure"));
+            "Super mario bros.", "Adventure"));
     }
 
     
@@ -51,7 +51,7 @@ public class RollinsGameReviewDriver {
 
         // Comic Sans MS being used for the font to give the text a more classic review forum feel
         // Use BOLD to make font clearer to read
-        JLabel title = new JLabel("Tommy The Tar 2 — Community Reviews", JLabel.CENTER);
+        JLabel title = new JLabel("Rollins Reviews", JLabel.CENTER);
         title.setFont(new Font("Comic Sans MS", Font.BOLD, 28));
         title.setForeground(Color.WHITE);
  
@@ -159,7 +159,7 @@ public class RollinsGameReviewDriver {
         double avg = allReviews.stream().mapToInt(r -> r.getScore()).average().orElse(0.0);
         String perception = avg >= 70 ? "POSITIVE" : avg >= 40 ? "MIXED" : "NEGATIVE";
 
-        sb.append(String.format(" SCORE AVERAGE: %.1f/100 → %s\n\n", avg, perception));
+        sb.append(String.format(" Overall mood: %.1f/100 → %s\n\n", avg, perception));
         sb.append("═".repeat(100)).append("\n\n");
 
         for (UserReview r : allReviews) {
@@ -175,7 +175,7 @@ public class RollinsGameReviewDriver {
     	ArrayList<Integer> totals=new ArrayList<>();
     	ArrayList<Integer> count=new ArrayList<>();
     	//Nested for loop so it can scan through the list and do various things like
-    	
+    	//Scans through games
     	for(UserReview review: allReviews) {
     	String gameName=review.getGame();
     	int index=-1;
@@ -186,7 +186,7 @@ public class RollinsGameReviewDriver {
     		}
     		
     	}
-    	
+    	//If this is the first instance of the game it will add it to the list
     	if(index==-1) {
     		newGames.add(gameName);
     	totals.add(0); 
@@ -199,7 +199,7 @@ public class RollinsGameReviewDriver {
        count.set(index, count.get(index) + 1);
     	}
        for(int i=0;i<newGames.size();i++) {
-    	   
+    	//Uses each of the list to get the count and totals of each game to find the average   
        String game=newGames.get(i);
        int totalScore=totals.get(i);
        int counter=count.get(i);
