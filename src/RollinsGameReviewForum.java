@@ -3,8 +3,10 @@ import java.util.ArrayList;
 public class RollinsGameReviewForum {
 	// Create ArrayList for reviews.
 	private ArrayList<AudienceReview> reviews = new ArrayList<>();
-	
-	// addReview mthod
+	//This whole class we tried working it into the program 
+	//But we found out there were more efficient 
+	//to do it so most of this code is redundant
+	// addReview method
 	public void addReview(AudienceReview review) {
 		reviews.add(review);
 	}
