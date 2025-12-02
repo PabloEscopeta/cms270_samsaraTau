@@ -167,6 +167,48 @@ public class RollinsGameReviewDriver {
         }
         
         
-        displayArea.setText(sb.toString());
-    }
+        
+    
+    
+    	//three list to contain all of the info needed for averages
+    	ArrayList<String> newGames=new ArrayList<>();
+    	ArrayList<Integer> totals=new ArrayList<>();
+    	ArrayList<Integer> count=new ArrayList<>();
+    	//Nested for loop so it can scan through the list and do various things like
+    	
+    	for(UserReview review: allReviews) {
+    	String gameName=review.getGame();
+    	int index=-1;
+    	for (int i=0;i<newGames.size();i++) {
+    		if (newGames.get(i).equalsIgnoreCase(gameName)) {
+    			index=i; 
+    			break;
+    		}
+    		
+    	}
+    	
+    	if(index==-1) {
+    		newGames.add(gameName);
+    	totals.add(0); 
+    	count.add(0);
+    	index=newGames.size()-1;
+    	}
+    	
+    	 
+        totals.set(index, totals.get(index) + review.getScore());
+       count.set(index, count.get(index) + 1);
+    	}
+       for(int i=0;i<newGames.size();i++) {
+    	   
+       String game=newGames.get(i);
+       int totalScore=totals.get(i);
+       int counter=count.get(i);
+    	double gameAverage=(counter>0) ? (double) totalScore/counter:0;
+       
+    	sb.append(String.format("  %s: %.1f/100\n", game, gameAverage));
+    	}
+    	displayArea.setText(sb.toString());
+    	
+    	}
+    
 }

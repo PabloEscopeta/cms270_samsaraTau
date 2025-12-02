@@ -32,7 +32,10 @@ public class UserReview extends ReviewAbstract {
     
     // Get method getScore
     public int getScore() { return score; }
-
+   //Get method for Game
+    public String getGame() {
+    	return gameName;
+    }
     public String toString() {
     	
         return "Game: " + gameName + " (" + gameGenre + ")\n" +
