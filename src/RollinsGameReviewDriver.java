@@ -28,7 +28,7 @@ public class RollinsGameReviewDriver {
         
         allReviews.add(new UserReview("OhNoItsEustace", "R00045516", 80,
             "Game is good, but these publishers need to stop making everything cross-platform", "2025-12-01",
-            "Super mario bros.", "Adventure"));
+            "Super Mario Bros.", "Platformer"));
     }
 
     
@@ -159,7 +159,7 @@ public class RollinsGameReviewDriver {
         double avg = allReviews.stream().mapToInt(r -> r.getScore()).average().orElse(0.0);
         String perception = avg >= 70 ? "POSITIVE" : avg >= 40 ? "MIXED" : "NEGATIVE";
 
-        sb.append(String.format(" Overall mood: %.1f/100 → %s\n\n", avg, perception));
+        sb.append(String.format(" Overall Mood: %.1f/100 → %s\n\n", avg, perception));
         sb.append("═".repeat(100)).append("\n\n");
 
         for (UserReview r : allReviews) {
